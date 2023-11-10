@@ -64,7 +64,7 @@ html{
     }
 }
 .outer-button{
-    // width: -moz-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     display: flex;
     justify-content: center;
@@ -242,19 +242,111 @@ html{
                     .box{
                         width: 170px;
                         height: 50px;
-                        border-radius: 1;
+                        border-radius: 10px;
                         overflow: hidden;
                         cursor: pointer;
 
-                        img{
+                        img {
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
                         }
+
+                        &:first-child{
+                            margin-right: 20px;
+                        }
                     }
                 }
             }
+
+           
+
+            .image-box{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 500px;
+                height: 500px;
+                position:relative;
+                z-index: 2;
+            }
+
+            img{
+                width: 100%;
+                object-fit: cover;
+                //29:07
         }
+        }
+    }
+
+    .form-container{
+        position: absolute;
+        bottom: 200px;
+        left: 100px;
+        width: 800px;
+        padding: 20px;
+        background: $clr-backgroud-variant;
+        box-shadow: $box-shadow;
+        display: flex;
+        border-radius: 10px;
+        z-index: 3;
+
+        .input-group{
+            width: 300px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-right: 20px;
+        }
+
+        input{
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+
+            &:valid{
+                outline: none;
+            }
+    
+            &::placeholder{
+                color: $clr-dark;
+                text-transform: capitalize;
+            }
+
+        }
+
+        .sub-input-group{
+            display: flex;
+            justify-content: space-between;
+
+            input{
+                width: 48%;
+                color: $clr-dark;
+            }
+        }
+
+        .form-button{
+            height: 90px;
+            width: 150px;
+            background: $clr-primary;
+            border: none;
+            border-radius: 5px;
+            color: $clr-background;
+            font-size: 34px;
+            font-weight: 700;
+            font-family: $font-subtitle;
+            cursor: pointer;
+            transition: all 300ms ease;
+
+            &:hover{
+                background: $clr-primary-variant;
+            }
+        }
+
+       
     }
 }
 
