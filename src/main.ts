@@ -13,15 +13,15 @@ library.add(far);
 import { dom } from "@fortawesome/fontawesome-svg-core";
 dom.watch();
 
+
 import App from './App.vue'
 import router from './router'
 
 
-// library.add(faUserSecret, faPhone, faRightToBracket)
+// library.add(faUserSecret)
 
 const app = createApp(App)
-
-app.component('font-awesome-icon', FontAwesomeIcon)
+.component('font-awesome-icon', FontAwesomeIcon)
 
 app.use(createPinia())
 app.use(router)
