@@ -3,7 +3,7 @@
     <div class="container">
       <div class="content">
         <div class="head-title">
-          easy way<br />
+          Easy way<br />
           to rent a<span> a dream car</span> <br />
           at an affordable <span>price!</span>
         </div>
