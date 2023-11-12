@@ -1,6 +1,6 @@
 <template>
   <div class="how-it-works-page" section id="work">
-    <div class="head-title"><span class="small-title" :text="smallTitle"></span>Easy steps to rent</div>
+    <div class="head-title-primary" data-small-title="how it works">Easy steps to rent</div>
     <div class="container">
       <div class="box-item">
         <div class="item">
@@ -39,7 +39,7 @@
 
 <script setup lang="ts">
 
-const smallTitle = 'How it works'
+// const smallTitle = 'How it works'
 // import { computed } from 'vue';
 
 //  const props = defineProps({

@@ -6,7 +6,7 @@ import HowItWorks from '@/components/HowItWorks.vue';
 </script>
 
 <template>
-  <div><NavigationBar /></div>
-  <div><HomePage /></div>
-<div><HowItWorks /></div>
+<NavigationBar />
+<HomePage />
+<HowItWorks />
 </template>
