@@ -99,5 +99,62 @@
         
       </div>
     </div>
+    <div class="car-container">
+      <div class="filter-car-bar">
+        <div class="head-title">
+          find car <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <div class="car-category-cotainer">
+          <div class="car-category">
+            <div class="top-box">
+              <div class="head-title">car type</div>
+              <div class="show-button" @click="toggleShow"></div>
+            </div>
+            
+            <div class="category-content">
+            
+              <div class="category-car " :class="{show: showState}">
+                <input type="checkbox" name="group-e">
+                <label for="groupe-e">Group-E</label>
+                <div class="category-count">(10)</div>
+              </div>
+              <div class="category-car" :class="{show: showState}">
+                <input type="checkbox" name="group-d">
+                <label for="groupe-d">Group-D</label>
+                <div class="category-count">(10)</div>
+              </div>
+              <div class="category-car" :class="{show: showState}">
+                <input type="checkbox" name="group-C">
+                <label for="groupe-C">Group-C</label>
+                <div class="category-count">(10)</div>
+              </div>
+              <div class="category-car" :class="{show: showState}">
+                <input type="checkbox" name="group-B">
+                <label for="groupe-B">Group-B</label>
+                <div class="category-count">(10)</div>
+              </div>
+              <div class="category-car" :class="{show: showState}">
+                <input type="checkbox" name="group-A">
+                <label for="groupe-A">Group-A</label>
+                <div class="category-count">(10)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// Define a ref for the "show" state. Initially, it's set to false.
+const showState = ref(false)
+
+// Define the function to toggle the "show" class.
+const toggleShow = () => {
+  showState.value = !showState.value
+}
+
+</script>
