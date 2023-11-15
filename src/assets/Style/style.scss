@@ -822,7 +822,7 @@ html {
             .car-category-cotainer {
                 .car-category {
                     height: 18px;
-                    overflow:hidden;
+                    overflow: hidden;
 
                     &:not(:first-child) {
                         margin-top: 15px;
@@ -901,7 +901,6 @@ html {
                                     line-height: 15px;
                                     color: $clr-primary;
                                 }
-                                //27//01
                             }
                         }
                     }

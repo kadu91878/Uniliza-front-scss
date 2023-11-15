@@ -105,7 +105,7 @@
           find car <i class="fa-solid fa-bullseye"></i>
         </div>
         <div class="car-category-cotainer">
-          <div class="car-category">
+          <div class="car-category" :class="{show: showState}">
             <div class="top-box">
               <div class="head-title">car type</div>
               <div class="show-button" @click="toggleShow"></div>
@@ -113,28 +113,28 @@
             
             <div class="category-content">
             
-              <div class="category-car " :class="{show: showState}">
-                <input type="checkbox" name="group-e">
+              <div class="category-car">
+                <input type="checkbox" id="group-E" name="group-e">
                 <label for="groupe-e">Group-E</label>
                 <div class="category-count">(10)</div>
               </div>
-              <div class="category-car" :class="{show: showState}">
-                <input type="checkbox" name="group-d">
+              <div class="category-car" >
+                <input type="checkbox" id="group-D" name="group-d">
                 <label for="groupe-d">Group-D</label>
                 <div class="category-count">(10)</div>
               </div>
-              <div class="category-car" :class="{show: showState}">
-                <input type="checkbox" name="group-C">
+              <div class="category-car">
+                <input type="checkbox" id="group-C" name="group-C">
                 <label for="groupe-C">Group-C</label>
                 <div class="category-count">(10)</div>
               </div>
-              <div class="category-car" :class="{show: showState}">
-                <input type="checkbox" name="group-B">
+              <div class="category-car">
+                <input type="checkbox" id="group-B" name="group-B">
                 <label for="groupe-B">Group-B</label>
                 <div class="category-count">(10)</div>
               </div>
-              <div class="category-car" :class="{show: showState}">
-                <input type="checkbox" name="group-A">
+              <div class="category-car">
+                <input type="checkbox" id="group-A" name="group-A">
                 <label for="groupe-A">Group-A</label>
                 <div class="category-count">(10)</div>
               </div>
