@@ -795,6 +795,8 @@ html {
     }
 
     .car-container {
+        display: flex;
+
         .filter-car-bar {
             width: 300px;
             height: 100%;
@@ -907,6 +909,163 @@ html {
                 }
             }
         }
+
+        .car-item-box{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            justify-content: center;
+            gap: 25px;
+
+            .car-item{
+                width: 250px;
+                height: 300px;
+                padding: 10px;
+                border-radius: 10px;
+                background: $clr-background;
+                box-shadow: $box-shadow;
+                position: relative;
+                border: 1px solid $clr-background;
+                transition: all 300ms ease 300ms;
+
+                .car-name{
+                    font-size: 22px;
+                    line-height: 20px;
+                    text-transform: capitalize;
+                    color: $clr-primary;
+                    font-weight: 800;
+                }
+
+                .car-body-category{
+                    font-size: 16px;
+                    line-height: 18px;
+                    color: $clr-primary;
+                    opacity: .8;
+                    position: relative;
+                }
+
+                .price{
+                    display: flex;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: $clr-dark;
+                    position: relative;
+
+                    p{
+                        font-size: 32px;
+                        line-height: 32px;
+                        color: $clr-dark-variant;
+                    }
+
+                    span{
+                        position: absolute;
+                        bottom: 0;
+                        left: 40%;
+                    }
+                }
+                .car-image{
+                    width: 230px;
+                    height: 150px;
+                    margin-bottom: 20px;
+
+                    img{
+                        object-fit: contain;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                .bottom-content{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .car-feature{
+                        padding: 10px;
+                        width: 230px;
+                        position: absolute;
+                        display: flex;
+                        opacity: 1;
+                        justify-content: space-between;
+                        transition: all 300ms ease 300ms;
+
+                        .feature-item{
+                            position: relative;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            text-transform: capitalize;
+
+                            svg{
+                                font-size: 20px;
+                                color: $clr-dark-variant;
+                                margin-bottom: 10px;
+                            }
+
+                            span{
+                                color: $clr-dark;
+                                width: 60px;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+
+                    .rent-button{
+                        
+                        position: absolute;
+                        width: 230px;
+                        height: 40px;
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: $clr-background;
+                        text-transform: capitalize;
+                        justify-content: center;
+                        align-items: center;
+                        background: $clr-primary;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        display: flex;
+                        opacity: 0;
+                        transition: all 300ms ease 300ms;
+
+                        svg{
+                            position: absolute;
+                            right: 20px;
+                            font-size: 16px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 5px;
+                            background: rgba($color: #fff, $alpha: 0.4);
+                        }
+                    }
+                }
+
+                &:hover{
+                    border: 1px solid $clr-primary;
+    
+                    .bottom-content{
+    
+                        .car-feature{
+                            opacity: 0;
+                        }
+    
+                        .rent-button{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+//38//22
+            
+        }
+
+
     }
 }
 
