@@ -1,6 +1,6 @@
 <template>
 <NavigationBar />
-<FormNav />
+<!-- <FormNav /> -->
 <CarSelection />
 </template>
 
