@@ -1433,8 +1433,120 @@ html {
         }
         }
     }
+
+    .car-page{
+        .find-car-bar{
+
+            .left-container{
+                display: none;
+            }
+        }
+    }
 }
 
+@media (max-width: 1050px) {
+    .home-page{
+        justify-content: center;
+        align-items: center;
+
+        .container{
+            flex-direction: column;
+            justify-content: center;
+
+            .content{
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .form-container{
+            display: none;
+        }
+    }
+
+    .how-it-works-page{
+        height: 110vh;
+
+        &::before, &::after{
+            height: 100%;
+            width: 4px;
+            top: 25%;
+            left: 50%;
+        }
+
+        .container{
+            .box-item{
+                flex-direction: column;
+                gap: 30px;
+
+                .item{
+                   position: relative;
+                   left: 30px;
+
+                   &::before, &::after{
+                    position: static;
+                }
+                                
+                    &:nth-child(odd){
+                        transform: translate(104px, 0%);
+
+                        &::before{
+                            z-index: 1;
+                            
+
+                        }
+
+                        &::before, &::after{
+                            // position: static;
+                            height: 4px;
+                            width: 68px;
+                            animation: none;
+                            transform: translate(-85px, 0px);
+                        
+                        }
+
+                        .head-title{
+                            text-align: right;
+                            transform: translate(120px, -100px);
+                        }
+                        .sub-title{
+                            text-align: left;
+                            transform: translate(170px, 10px);
+                        }
+                    }
+                    &:nth-child(even){
+                        transform: translate(-100px, 0%);
+
+                        &::before{
+                            z-index: 1;
+
+                        }
+
+                        &::before, &::after{
+                            // position: static;
+                            height: 4px;
+                            width: 40px;
+                            animation: none;
+                            transform: translate(69px, 0px);
+                        }
+
+                        .head-title{
+                            text-align: right;
+                            transform: translate(-180px, -90px);
+                        }
+                        .sub-title{
+                            text-align: left;
+                            transform: translate(-140px, 20px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 // ========== For Middle-Low Width Device
 
 // ========== Form Navigation

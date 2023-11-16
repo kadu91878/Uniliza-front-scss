@@ -63,4 +63,9 @@ const toggleMenu = () => {
   showState.value = !showState.value
 }
 
+window.onscroll = () => {
+  showState.value = false
+}
+
+
 </script>
