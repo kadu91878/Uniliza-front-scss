@@ -1,6 +1,6 @@
 <template>
   <div class="navigation-bar">
-    <a href="" class="head-title"> had <span> rent</span></a>
+    <a href="" class="head-title">  <span> Uniliza</span></a>
     <ul class="nav-item" :class="{ show: showState }">
       <li><a href="home">home</a></li>
       <li><a href="how">how it works</a></li>

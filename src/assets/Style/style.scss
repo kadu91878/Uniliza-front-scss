@@ -934,7 +934,7 @@ html {
                         .top-box {
                             .show-button {
                                 &::before {
-                                    content: "\f068";
+                                    content: "-";
                                     font-family: "Font Awesome 6 Free";
                                     font-weight: 900;
                                     display: inline-block;
@@ -1449,6 +1449,10 @@ html {
         justify-content: center;
         align-items: center;
 
+        &::after{
+            display: none;
+        }
+
         .container{
             flex-direction: column;
             justify-content: center;
@@ -1546,6 +1550,66 @@ html {
             }
         }
     }
+
+    .download-page{
+        height: 500px;
+
+        .container{
+            transform: scale(.7) translateY(-20%);
+        }
+    }
+
+    .faq-page{
+        .container{
+            .head-title{
+                font-size: 32px;
+            }
+
+            .sub-title{
+                font-size: 34px;
+            }
+        }
+    }
+}
+
+@media (max-width: 740px){
+    .car-page{
+
+        .find-car-bar{
+            width: 100%;
+            height: 400px;
+
+            .right-container{
+                height: 360px;
+                flex-direction: column;
+
+                .form-container{
+                    width: 100%;
+                }
+            }
+        }
+
+        .car-container{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .filter-car-bar{
+                margin-right: 0px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .download-page{
+        padding: 0px;
+        height: 400px;
+
+        .container{
+            transform: translateY(-20%) scale(.5);
+        }
+    }
+
 }
 // ========== For Middle-Low Width Device
 
@@ -1625,9 +1689,9 @@ html {
 .teste-menos{
     span{
     &::after{
-        font-family: "Font Awesome 5 Free";
-        font: var(--fa-font-solid);
-        content: "\f068";
+        // font-family: "Font Awesome 6 Free";
+        // font: var(--fa-font-solid);
+        content: "-";
         font-weight: 900;
     }
 }
