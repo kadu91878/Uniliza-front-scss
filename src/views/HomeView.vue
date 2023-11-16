@@ -3,6 +3,7 @@ import NavigationBar from '@/components/NavigationBar.vue'
 import HomePage from '@/components/HomePage.vue';
 import HowItWorks from '@/components/HowItWorks.vue';
 import AppSection from '@/components/AppSection.vue';
+import BottomFootter from '@/components/BottomFootter.vue';
 
 
 </script>
@@ -12,4 +13,5 @@ import AppSection from '@/components/AppSection.vue';
 <HomePage />
 <HowItWorks />
 <AppSection />   
+<BottomFootter />
 </template>

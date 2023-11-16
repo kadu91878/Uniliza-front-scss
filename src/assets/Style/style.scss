@@ -857,6 +857,7 @@ html {
                                 font-size: 15px;
                                 line-height: 15px;
                                 color: $clr-primary;
+                                
                             }
                         }
                     }
@@ -902,6 +903,7 @@ html {
                                     font-size: 15px;
                                     line-height: 15px;
                                     color: $clr-primary;
+                                    
                                 }
                             }
                         }
@@ -1253,6 +1255,131 @@ html {
 
             &:hover {
                 background: $clr-primary-variant;
+            }
+        }
+    }
+}
+
+// ========== Test-fonts
+
+.teste-menos{
+    span{
+    &::after{
+        font-family: "Font Awesome 5 Free";
+        font: var(--fa-font-solid);
+        content: "\f068";
+        font-weight: 900;
+    }
+}
+}
+
+
+// ========== Footer
+
+
+.footer-container{
+
+    background: $clr-dark-variant;    
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+
+
+    .head-title{
+      
+        
+
+        span{
+            font-weight: 900;
+            font-size: 32px;
+            color: $clr-primary-variant;
+            text-transform: capitalize;
+        }
+    }
+
+    .link-container{
+
+        .link-box{
+
+            .top-box{
+            text-transform: capitalize;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            span{
+                gap: 10px;
+                transition: all 300ms ease $clr-primary;
+                cursor: pointer;
+                color: $clr-backgroud-variant;
+
+                &:hover{
+                    color: $clr-primary;
+                }
+            }
+            }
+                        
+            .mid-box{
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                margin-top: 10px;
+                justify-content: center;
+
+                .item{
+                    display: flex;
+                    padding: 20px;
+                    align-items: center;
+                    color: $clr-backgroud-variant;
+                    gap: 10px;
+                    cursor: pointer;
+                    transition: all 300ms ease;
+
+                    svg{
+                        color: $clr-primary-variant;
+                        transition: all 300ms ease;
+                    }
+
+                    &:hover{
+                        color: $clr-primary;
+
+                        svg{
+                            color: $clr-primary;
+
+                        }
+                    }
+
+
+                    
+
+                .head-title{
+                    text-transform: capitalize;
+                }
+
+            }
+
+                
+
+            }
+
+            .bottom-box{
+                .head-title{
+                    font-weight: 400;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                    color: $clr-backgroud-variant;
+                }
+
+                .sub-title{
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    color: $clr-backgroud-variant;
+                }
             }
         }
     }
