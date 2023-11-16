@@ -4,6 +4,7 @@ import HomePage from '@/components/HomePage.vue';
 import HowItWorks from '@/components/HowItWorks.vue';
 import AppSection from '@/components/AppSection.vue';
 import BottomFootter from '@/components/BottomFootter.vue';
+import FaqSection from '@/components/FaqSection.vue';
 
 
 </script>
@@ -13,5 +14,6 @@ import BottomFootter from '@/components/BottomFootter.vue';
 <HomePage />
 <HowItWorks />
 <AppSection />   
+<FaqSection />
 <BottomFootter />
 </template>
