@@ -8,6 +8,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'main',
+      component: HomeView
+    },
+    {
+      path: '/home',
       name: 'home',
       component: HomeView
     },
@@ -22,7 +27,14 @@ const router = createRouter({
       component: TesteViewVue
     }
 
-  ]
+  ],
+  // scrollBehavior: function (to) {
+  //   if (to.hash) {
+  //     return {
+  //       selector: to.hash
+  //     }
+  //   }
+  // },
 })
 
 export default router

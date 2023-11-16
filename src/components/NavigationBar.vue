@@ -1,15 +1,16 @@
 <template>
   <div class="navigation-bar">
-    <a href="" class="head-title">  <span> Uniliza</span></a>
+    <router-link to="/" class="head-title"> <span> Uniliza</span></router-link>
     <ul class="nav-item" :class="{ show: showState }">
-      <li><a href="home">home</a></li>
-      <li><a href="how">how it works</a></li>
-      <li><a href="service">service</a></li>
-      <li><a href="suggest">suggest</a></li>
-      <li><a href="car">car</a></li>
-      <li><a href="testi">testimonials</a></li>
-      <li><a href="update">update</a></li>
-      <li><a href="faq">faq</a></li>
+      <li><a href="#home"><router-link to="/" replace>home</router-link></a></li>
+      <li><a href="#work">how it works</a></li>
+      <!-- <li><a href="service">service</a></li> -->
+      <li><a href="#"><router-link to="/car-section">service</router-link></a></li>
+      <!-- <li><a href="suggest">suggest</a></li> -->
+      <li><a href="#"><router-link to="/car-section">car</router-link></a></li>
+      <!-- <li><a href="testi">testimonials</a></li> -->
+      <li><a href="#download">update</a></li>
+      <li><a href="#faq">faq</a></li>
     </ul>
     <div class="account-box">
       <div class="box login-bar">
@@ -56,6 +57,7 @@
 // }
 
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
 
 const showState = ref(false)
 
@@ -65,6 +67,13 @@ const toggleMenu = () => {
 
 window.onscroll = () => {
   showState.value = false
+}
+
+
+const router = useRouter();
+
+function navigateToHome() {
+ router.push('/');
 }
 
 
