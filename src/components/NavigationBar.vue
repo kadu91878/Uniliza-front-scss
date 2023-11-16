@@ -14,7 +14,7 @@
     <div class="account-box">
       <div class="box login-bar">
         <p>login</p>
-        <i class="fa-solid fa-right-from-bracket" style="color: #22a1aa"></i>
+        <i class="fa-solid fa-right-from-bracket" ></i>
       </div>
       <div class="box singup-bar">
         <p>sign up</p>

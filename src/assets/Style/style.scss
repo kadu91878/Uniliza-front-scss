@@ -199,6 +199,13 @@ html {
             cursor: pointer;
             transition: all 300ms ease;
 
+            &.login-bar{
+                
+                svg{
+                    color: $clr-primary;
+                }
+            }
+
             &.singup-bar {
                 background: $clr-backgroud-variant;
             }
@@ -1313,7 +1320,6 @@ html {
             justify-content: center;
 
             span{
-                gap: 10px;
                 transition: all 300ms ease $clr-primary;
                 cursor: pointer;
                 color: $clr-backgroud-variant;
@@ -1327,7 +1333,6 @@ html {
             .mid-box{
                 display: flex;
                 flex-direction: row;
-                gap: 10px;
                 margin-top: 10px;
                 justify-content: center;
 
