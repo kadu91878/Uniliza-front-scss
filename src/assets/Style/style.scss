@@ -131,13 +131,24 @@ html {
         border: 4px solid $clr-primary;
     }
 }
+@keyframes menu-item-animate {
+    0%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+}
 
 // ========== Background
 
 // ========== Navigation Bar
 .navigation-bar {
     width: 100%;
-    height: 70px;
+    height: 10%;
     top: 0;
     left: 0;
     position: fixed;
@@ -219,6 +230,29 @@ html {
                 color: $clr-background;
                 background: $clr-primary;
             }
+        }
+    }
+
+    .menu-toggle{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        z-index: 1000;
+
+        &::before{
+            content: '-';
+            font-weight: 900;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-size: 30px;
+            line-height: 30px;
+            color: $clr-primary;
+            cursor: pointer;
         }
     }
 }
@@ -1293,6 +1327,113 @@ html {
 // ========== Media Queries
 
 // ========== For Middle-High Width Device
+@media (max-width:1300px){
+    .how-it-works-page{
+        &::after{
+            animation: none;
+        }
+
+        .container{
+            .box-item{
+                .item{
+                    &:nth-child(odd){
+                        animation: none;
+                        box-shadow: 0px 0px 10px $clr-primary;
+
+                        &::after{
+                            opacity: 0;
+                        }
+                    }
+
+                    &:nth-child(even){
+                        animation: none;
+                        box-shadow: 0px 0px 10px $clr-primary;
+
+                        &::after{
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1182px){
+    .navigation-bar{
+        .nav-item{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba($color: #90b4ce, $alpha: 0.7);
+            z-index: 1000;
+
+            li{
+                opacity: 0;
+
+                a{
+                    font-size: 32px;
+                    color: $clr-background;
+
+                    &:hover{
+                        color: $clr-backgroud-variant;
+                    }
+                }
+            }
+
+            &.show{
+
+                display: flex;
+
+                li{
+                    animation: menu-item-animate 1s ease forwards;
+
+                    &:nth-child(2){
+                        animation-delay: .2s;
+                    }
+                    &:nth-child(3){
+                        animation-delay: .3s;
+                    }
+                    &:nth-child(4){
+                        animation-delay: .4s;
+                    }
+                    &:nth-child(5){
+                        animation-delay: .5s;
+                    }
+                    &:nth-child(6){
+                        animation-delay: .6s;
+                    }
+                    &:nth-child(7){
+                        animation-delay: .7s;
+                    }
+                    &:nth-child(8){
+                        animation-delay: .8s;
+                    }
+                }
+            }
+        }
+
+        .menu-toggle{
+            display: flex;
+
+            &.show{
+
+            
+
+            &::before{
+
+                content: '\f057';
+            }
+        }
+        }
+    }
+}
 
 // ========== For Middle-Low Width Device
 

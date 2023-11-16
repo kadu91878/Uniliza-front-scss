@@ -1,7 +1,7 @@
 <template>
   <div class="navigation-bar">
     <a href="" class="head-title"> had <span> rent</span></a>
-    <ul class="nav-item">
+    <ul class="nav-item" :class="{ show: showState }">
       <li><a href="home">home</a></li>
       <li><a href="how">how it works</a></li>
       <li><a href="service">service</a></li>
@@ -20,7 +20,7 @@
         <p>sign up</p>
         <i class="fa-solid fa-user-plus"></i>
       </div>
-      <div class="menu-toggle"></div>
+      <div class="menu-toggle" @click="toggleMenu()" :class="{ show: showState }"></div>
     </div>
   </div>
 </template>
@@ -45,3 +45,22 @@
 }
 
 </style> -->
+
+<script setup lang="ts">
+// const menuButton = document.querySelector(".menu-toggle"),
+// navItem = document.querySelector(".nav-item");
+
+// function toggleMenu(){
+//   menuButton?.classList.toggle('show');
+//   navItem?.classList.toggle('show');
+// }
+
+import { ref } from 'vue'
+
+const showState = ref(false)
+
+const toggleMenu = () => {
+  showState.value = !showState.value
+}
+
+</script>
