@@ -1188,6 +1188,86 @@ html {
 
 // ========== Faq Page
 
+.faq-page{
+    background: $clr-backgroud-variant;
+
+    .container{
+
+        .head-title{
+            text-align: center;
+            font-size: 48px;
+            line-height: 46px;
+            font-weight: 800;
+            columns: $clr-dark-variant;
+        }
+
+        .sub-title{
+            color: $clr-dark;
+            font-size: 20px;
+            line-height: 22px;
+            text-align: center;
+            font-weight: 600;
+            font-family: $font-subtitle;
+            margin-top: 20px;
+        }
+
+        .faq-container{
+            padding: 50px 0 0;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            max-height: 80vh;
+            gap: 0;
+
+            .faq-item{
+                width: 100%;
+                background: $clr-background;
+                border-radius: 5px;
+                padding: 20px;
+                position: relative;
+                box-shadow: $box-shadow;
+
+                &:not(:last-child){
+                    margin-bottom: 20px;
+                }
+
+                .tittle-quest{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    h2{
+                        color: $clr-primary;
+                        font-size: 20px;
+                        display: -webkit-box;
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 1;
+                    }
+
+                    a{
+                        svg{
+                            font-size: 24px;
+                            color: $clr-primary;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .answer{
+                    max-height: 0;
+                    overflow: hidden;
+                    position: relative;
+                    color: $clr-dark;
+                    font-size: 16px;
+                    transition: all .4s ease;
+                }
+            }
+        }
+    }
+}
+
 // ========== Copyright
 
 // ========== Media Queries
