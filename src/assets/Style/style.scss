@@ -1070,11 +1070,7 @@ html {
                     }
                 }
             }
-//38//22
-            
         }
-
-
     }
 }
 
@@ -1199,6 +1195,13 @@ html {
             line-height: 46px;
             font-weight: 800;
             columns: $clr-dark-variant;
+
+            .data-small-title{
+                color: $clr-primary;
+                font-family: $font-head-title;
+                font-weight: 700;
+                text-transform: capitalize; 
+            }
         }
 
         .sub-title{
@@ -1231,7 +1234,7 @@ html {
                     margin-bottom: 20px;
                 }
 
-                .tittle-quest{
+                .title-quest{
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
@@ -1262,6 +1265,23 @@ html {
                     color: $clr-dark;
                     font-size: 16px;
                     transition: all .4s ease;
+                }
+
+                &:target{
+                    .title-quest{
+                        h2{
+                            -webkit-line-clamp: 2;
+                        }
+
+                        a{
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .answer{
+                        max-height: 100px;
+                        margin-top: 20px;
+                    }
                 }
             }
         }
