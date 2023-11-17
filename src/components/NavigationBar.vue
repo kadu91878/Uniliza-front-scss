@@ -2,20 +2,31 @@
   <div class="navigation-bar">
     <router-link to="/" class="head-title"> <span> Uniliza</span></router-link>
     <ul class="nav-item" :class="{ show: showState }">
-      <li><a href="#home"><router-link to="/" replace>home</router-link></a></li>
-      <li><a href="#work">how it works</a></li>
-      <!-- <li><a href="service">service</a></li> -->
-      <li><a href="#"><router-link to="/car-section">service</router-link></a></li>
+      <li>
+        <a v-if="route.name != 'main'"><router-link to="/" replace>home</router-link></a>
+        <a href="#home" v-else>home</a>
+      </li>
+      <li><a v-if="route.name != 'main'"><router-link to="/"> how it works</router-link></a>
+        <a href="#work" v-else>how it works</a></li>
+      <li>
+        <a v-if="route.name != 'car-section'"><router-link to="/car-section">service</router-link></a>
+        <a href="#car" v-else>service</a>
+      </li>
       <!-- <li><a href="suggest">suggest</a></li> -->
-      <li><a href="#"><router-link to="/car-section">car</router-link></a></li>
+      <li>
+        <a v-if="route.name != 'car-section'"><router-link to="/car-section">car</router-link></a>
+        <a href="#car" v-else>car</a>
+      </li>
       <!-- <li><a href="testi">testimonials</a></li> -->
-      <li><a href="#download">update</a></li>
-      <li><a href="#faq">faq</a></li>
+      <li><a v-if="route.name != 'main'"><router-link to="/">update</router-link></a>
+        <a href="#download" v-else>update</a></li>
+      <li><a v-if="route.name != 'main'"><router-link to="/">service</router-link></a>
+        <a href="#faq" v-else>faq</a></li>
     </ul>
     <div class="account-box">
       <div class="box login-bar">
         <p>login</p>
-        <i class="fa-solid fa-right-from-bracket" ></i>
+        <i class="fa-solid fa-right-from-bracket"></i>
       </div>
       <div class="box singup-bar">
         <p>sign up</p>
@@ -57,7 +68,8 @@
 // }
 
 import { ref } from 'vue'
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 
 const showState = ref(false)
 
@@ -69,12 +81,10 @@ window.onscroll = () => {
   showState.value = false
 }
 
-
-const router = useRouter();
+const router = useRouter()
+const route = useRoute()
 
 function navigateToHome() {
- router.push('/');
+  router.push('/')
 }
-
-
 </script>
