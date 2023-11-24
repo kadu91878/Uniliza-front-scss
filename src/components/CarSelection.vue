@@ -287,7 +287,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted} from 'vue';
+import axios from 'axios';
+import type { cars } from '../types/cars.ts';
+
+let carsList = ref<cars[]>([]);
+let filteredCarsList = ref<cars[]>([]);
+const loading = ref(false);
+
+const getCars = async () => {
+  try{
+    const response = await axios.get('http://localhost:8080/carros/');
+    carsList.value = response.data
+    filteredCarsList.value = carsList.value;
+    console.log(carsList.value[1].nome);
+  }catch(error){
+    console.log(console.error());
+  }
+}
+
+onMounted(async () => {
+  loading.value = true;
+  await getCars();
+  loading.value = false;
+});
 
 const showState = ref(false)
 
