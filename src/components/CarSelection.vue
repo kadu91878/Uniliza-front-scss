@@ -105,45 +105,29 @@
               <div class="show-button" @click="toggleShow"></div>
             </div>
 
-            <div class="category-content">
+            <div class="category-content" v-for="car in filteredCarsList" :key="car.id">
               <div class="category-car">
-                <input type="checkbox" id="group-E" name="group-e" />
-                <label for="groupe-e">Group-E</label>
-                <div class="category-count">(10)</div>
-              </div>
-              <div class="category-car">
-                <input type="checkbox" id="group-D" name="group-d" />
-                <label for="groupe-d">Group-D</label>
-                <div class="category-count">(10)</div>
-              </div>
-              <div class="category-car">
-                <input type="checkbox" id="group-C" name="group-C" />
-                <label for="groupe-C">Group-C</label>
-                <div class="category-count">(10)</div>
-              </div>
-              <div class="category-car">
-                <input type="checkbox" id="group-B" name="group-B" />
-                <label for="groupe-B">Group-B</label>
-                <div class="category-count">(10)</div>
-              </div>
-              <div class="category-car">
-                <input type="checkbox" id="group-A" name="group-A" />
-                <label for="groupe-A">Group-A</label>
-                <div class="category-count">(10)</div>
+                <input type="checkbox" :id="car.categoriaId.nome" :name="'group-' + car.categoriaId.nome"
+                v-model="selectedCategoriaIds" :value="car.categoriaId.categoriaId"
+                @change="filterCarsByCategoriaId" />
+                <label for="groupe-e">{{car.categoriaId.nome  }}</label>
+                <div class="category-count">({{getCountForCategoriaId(car.categoriaId.categoriaId)}})</div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="car-item-box">
-        <div class="car-item">
-          <div class="car-name">Fiat Mobi</div>
-          <div class="car-body-category">Group-E</div>
+        <div class="car-item" v-for="car in filteredCarsList" :key="car.id">
+          <div class="car-name">{{ car.nome }}</div>
+          <div class="car-body-category">{{ car.categoriaId.nome }}</div>
           <div class="price">
-            $<p>39,95</p><span>/day</span>
+            $
+            <p>{{ car.valor }}</p>
+            <span>/day</span>
           </div>
           <div class="car-image">
-            <img src="../assets/Image/Car Image/pngwing.com (1).png" alt="" />
+            <img :src="getUrl(car.id)" alt="" />
           </div>
           <div class="bottom-content">
             <div class="car-feature">
@@ -160,125 +144,7 @@
                 <span>flex</span>
               </div>
             </div>
-            <div class="rent-button">
-              rent now! <i class="fa-solid fa-arrow-right"></i>
-            </div>
-          </div>
-        </div>
-        <div class="car-item">
-          <div class="car-name">VolksWagen Voyage</div>
-          <div class="car-body-category">Group-D</div>
-          <div class="price">
-            $<p>49,95</p><span>/day</span>
-          </div>
-          <div class="car-image">
-            <img src="../assets/Image/Car Image/pngwing.com.png" alt="" />
-          </div>
-          <div class="bottom-content">
-            <div class="car-feature">
-              <div class="feature-item">
-                <i class="fa-solid fa-gears"></i>
-                <span>automatic</span>
-              </div>
-              <div class="feature-item">
-                <i class="fa-solid fa-chair"></i>
-                <span>5 seats</span>
-              </div>
-              <div class="feature-item">
-                <i class="fa-solid fa-gas-pump"></i>
-                <span>flex</span>
-              </div>
-            </div>
-            <div class="rent-button">
-              rent now! <i class="fa-solid fa-arrow-right"></i>
-            </div>
-          </div>
-        </div>
-        <div class="car-item">
-          <div class="car-name">Chevrolet Spin</div>
-          <div class="car-body-category">Group-C</div>
-          <div class="price">
-            $<p>69,95</p><span>/day</span>
-          </div>
-          <div class="car-image">
-            <img src="../assets/Image/Car Image/pngwing.com (2).png" alt="" />
-          </div>
-          <div class="bottom-content">
-            <div class="car-feature">
-              <div class="feature-item">
-                <i class="fa-solid fa-gears"></i>
-                <span>automatic</span>
-              </div>
-              <div class="feature-item">
-                <i class="fa-solid fa-chair"></i>
-                <span>7 seats</span>
-              </div>
-              <div class="feature-item">
-                <i class="fa-solid fa-gas-pump"></i>
-                <span>flex</span>
-              </div>
-            </div>
-            <div class="rent-button">
-              rent now! <i class="fa-solid fa-arrow-right"></i>
-            </div>
-          </div>
-        </div>
-        <div class="car-item">
-          <div class="car-name">Ford Ecosport</div>
-          <div class="car-body-category">Group-B</div>
-          <div class="price">
-            $<p>89,95</p><span>/day</span>
-          </div>
-          <div class="car-image">
-            <img src="../assets/Image/Car Image/pngwing.com (3).png" alt="" />
-          </div>
-          <div class="bottom-content">
-            <div class="car-feature">
-              <div class="feature-item">
-                <i class="fa-solid fa-gears"></i>
-                <span>automatic</span>
-              </div>
-              <div class="feature-item">
-                <i class="fa-solid fa-chair"></i>
-                <span>5 seats</span>
-              </div>
-              <div class="feature-item">
-                <i class="fa-solid fa-gas-pump"></i>
-                <span>flex</span>
-              </div>
-            </div>
-            <div class="rent-button">
-              rent now! <i class="fa-solid fa-arrow-right"></i>
-            </div>
-          </div>
-        </div>
-        <div class="car-item">
-          <div class="car-name">Audi A3</div>
-          <div class="car-body-category">Group-A</div>
-          <div class="price">
-            $<p>99,95</p><span>/day</span>
-          </div>
-          <div class="car-image">
-            <img src="../assets/Image/Car Image/pngwing.com (4).png" alt="" />
-          </div>
-          <div class="bottom-content">
-            <div class="car-feature">
-              <div class="feature-item">
-                <i class="fa-solid fa-gears"></i>
-                <span>automatic</span>
-              </div>
-              <div class="feature-item">
-                <i class="fa-solid fa-chair"></i>
-                <span>5 seats</span>
-              </div>
-              <div class="feature-item">
-                <i class="fa-solid fa-gas-pump"></i>
-                <span>flex</span>
-              </div>
-            </div>
-            <div class="rent-button">
-              rent now! <i class="fa-solid fa-arrow-right"></i>
-            </div>
+            <div class="rent-button">rent now! <i class="fa-solid fa-arrow-right"></i></div>
           </div>
         </div>
       </div>
@@ -287,30 +153,54 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted} from 'vue';
-import axios from 'axios';
-import type { cars } from '../types/cars.ts';
+import { ref, onMounted, watch} from 'vue'
+import axios from 'axios'
+import type { cars } from '../types/cars.ts'
 
-let carsList = ref<cars[]>([]);
-let filteredCarsList = ref<cars[]>([]);
-const loading = ref(false);
+let carsList = ref<cars[]>([])
+let filteredCarsList = ref<cars[]>([])
+const loading = ref(false)
+const selectedCategoriaIds = ref<number[]>([]);
 
 const getCars = async () => {
-  try{
-    const response = await axios.get('http://localhost:8080/carros/');
+  try {
+    const response = await axios.get('http://localhost:8080/carros/')
     carsList.value = response.data
-    filteredCarsList.value = carsList.value;
-    console.log(carsList.value[1].nome);
-  }catch(error){
-    console.log(console.error());
+    filteredCarsList.value = carsList.value
+    console.log(carsList.value)
+  } catch (error) {
+    console.log(console.error())
   }
 }
 
 onMounted(async () => {
-  loading.value = true;
-  await getCars();
-  loading.value = false;
+  loading.value = true
+  await getCars()
+  loading.value = false
+})
+
+const getUrl = (carId: number) => {
+  return `src/assets/Image/Car%20Image/pngwing.com(${carId}).png`
+}
+
+
+const getCountForCategoriaId = (categoriaId: number): number => {
+  return filteredCarsList.value.filter(car => car.categoriaId.categoriaId === categoriaId).length;
+};
+
+watch(selectedCategoriaIds, (newValues, oldValues) => {
+  filterCarsByCategoriaId();
 });
+
+const filterCarsByCategoriaId = () => {
+  if (selectedCategoriaIds.value.length === 0) {
+    filteredCarsList.value = carsList.value;
+  } else {
+    filteredCarsList.value = carsList.value.filter(car =>
+      selectedCategoriaIds.value.includes(car.categoriaId.categoriaId)
+    );
+  }
+};
 
 const showState = ref(false)
 

@@ -1,6 +1,7 @@
 import type { categoria } from "./categoria";
 
 export interface cars{
+[x: string]: any;
     
     id: number;
     nome: string;
