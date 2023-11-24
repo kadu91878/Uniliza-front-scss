@@ -55,7 +55,7 @@
                 <i class="fa-solid fa-calendar"></i>
                 pick-up date
               </label>
-              <input type="date" name="pick-up date" />
+              <input type="date" name="pick-up date" v-model="reservationDate"/>
             </div>
             <div class="box">
               <label for="pick-up-time">
@@ -82,7 +82,7 @@
                 <i class="fa-solid fa-calendar"></i>
                 drop-off date
               </label>
-              <input type="date" name="drop-off date" />
+              <input type="date" name="drop-off date" v-model="dueDate"/>
             </div>
             <div class="box">
               <label for="drop-off-time">
@@ -118,7 +118,7 @@
         </div>
       </div>
       <div class="car-item-box">
-        <div class="car-item" v-for="car in filteredCarsList" :key="car.id">
+        <div class="car-item" v-for="car in filteredCarsList" :key="car.id" :class="{ unavailable: isUnavailable(car.id) }">
           <div class="car-name">{{ car.nome }}</div>
           <div class="car-body-category">{{ car.categoriaId.nome }}</div>
           <div class="price">
@@ -155,12 +155,15 @@
 <script setup lang="ts">
 import { ref, onMounted, watch} from 'vue'
 import axios from 'axios'
-import type { cars } from '../types/cars.ts'
+import type { cars, availability } from '../types/cars.ts'
 
 let carsList = ref<cars[]>([])
 let filteredCarsList = ref<cars[]>([])
 const loading = ref(false)
 const selectedCategoriaIds = ref<number[]>([]);
+const reservationDate = ref('');
+const dueDate = ref('')
+const available = ref<availability[]>([]);
 
 const getCars = async () => {
   try {
@@ -168,6 +171,20 @@ const getCars = async () => {
     carsList.value = response.data
     filteredCarsList.value = carsList.value
     console.log(carsList.value)
+  } catch (error) {
+    console.log(console.error())
+  }
+}
+
+const getAvailability = async () => {
+  try {
+    const response = await axios.get('http://localhost:8080/verificar-disponibilidade', {
+      params: {
+        dataInicio: reservationDate.value,
+        dataFim: dueDate.value
+      }
+    })
+    available.value = response.data
   } catch (error) {
     console.log(console.error())
   }
@@ -191,6 +208,17 @@ const getCountForCategoriaId = (categoriaId: number): number => {
 watch(selectedCategoriaIds, (newValues, oldValues) => {
   filterCarsByCategoriaId();
 });
+
+watch([reservationDate, dueDate], () => {
+  if(reservationDate.value && dueDate.value) {
+    getAvailability()
+  }
+});
+
+const isUnavailable = (carId: number): boolean => {
+  // Verificando se o carId está na lista available
+  return available.value.some((item) => item.carId === carId);
+};
 
 const filterCarsByCategoriaId = () => {
   if (selectedCategoriaIds.value.length === 0) {
